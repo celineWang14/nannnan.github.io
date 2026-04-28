@@ -1,8 +1,15 @@
 import { motion } from "framer-motion";
 import { personal } from "../data/resume";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import { GithubIcon, LinkedinIcon } from "./Icons";
 
 export default function Footer() {
+  const links = [
+    { Icon: GithubIcon, href: personal.github },
+    { Icon: LinkedinIcon, href: personal.linkedin },
+    { Icon: Mail, href: `mailto:${personal.email}` },
+  ];
+
   return (
     <footer className="py-10 px-6 border-t border-slate-800">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -10,11 +17,7 @@ export default function Footer() {
           © {new Date().getFullYear()} {personal.name}. Built with React + Vite + Framer Motion.
         </p>
         <div className="flex items-center gap-4">
-          {[
-            { icon: Github, href: personal.github },
-            { icon: Linkedin, href: personal.linkedin },
-            { icon: Mail, href: `mailto:${personal.email}` },
-          ].map(({ icon: Icon, href }, i) => (
+          {links.map(({ Icon, href }, i) => (
             <motion.a
               key={i}
               href={href}

@@ -1,7 +1,8 @@
 import { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { projects } from "../data/resume";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { GithubIcon } from "./Icons";
 
 function TiltCard({ project, index }: { project: typeof projects[0]; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -41,11 +42,10 @@ function TiltCard({ project, index }: { project: typeof projects[0]; index: numb
         onMouseLeave={handleMouseLeave}
         className="relative bg-slate-800/60 border border-slate-700 rounded-2xl p-6 cursor-default h-full"
       >
-        {/* Glow overlay */}
         <motion.div
           animate={{ opacity: hovered ? 1 : 0 }}
           transition={{ duration: 0.2 }}
-          className="absolute inset-0 rounded-2xl bg-gradient-to-br from-indigo-500/10 via-violet-500/5 to-transparent pointer-events-none"
+          className="absolute inset-0 rounded-2xl bg-linear-to-br from-indigo-500/10 via-violet-500/5 to-transparent pointer-events-none"
         />
         <motion.div
           animate={{ opacity: hovered ? 1 : 0 }}
@@ -65,7 +65,7 @@ function TiltCard({ project, index }: { project: typeof projects[0]; index: numb
                 whileHover={{ scale: 1.15, color: "#a5b4fc" }}
                 className="text-slate-500 hover:text-indigo-400 transition-colors"
               >
-                <Github size={18} />
+                <GithubIcon size={18} className="text-current" />
               </motion.a>
               <motion.a
                 href={project.link}
@@ -125,8 +125,6 @@ export default function Projects() {
           {projects.map((p, i) => (
             <TiltCard key={p.title} project={p} index={i} />
           ))}
-
-          {/* Placeholder card */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}

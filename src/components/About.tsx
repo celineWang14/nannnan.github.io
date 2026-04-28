@@ -2,16 +2,6 @@ import { motion } from "framer-motion";
 import { personal, education } from "../data/resume";
 import { MapPin, GraduationCap, Star } from "lucide-react";
 
-const fadeLeft = {
-  hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } },
-};
-
-const fadeRight = {
-  hidden: { opacity: 0, x: 50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: "easeOut" } },
-};
-
 const stats = [
   { label: "GPA", value: education.gpa },
   { label: "Internships", value: "3" },
@@ -37,10 +27,10 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Left — text */}
           <motion.div
-            variants={fadeLeft}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, ease: "easeOut" as const }}
           >
             <p className="text-slate-300 text-lg leading-relaxed mb-6">
               I'm a <span className="text-indigo-300 font-semibold">Computer Science student at UCLA</span> with a passion for building fast, polished, production-ready web applications. I love the intersection of great engineering and great user experience.
@@ -67,10 +57,10 @@ export default function About() {
 
           {/* Right — stat cards */}
           <motion.div
-            variants={fadeRight}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, ease: "easeOut" as const }}
             className="grid grid-cols-2 gap-4"
           >
             {stats.map((s, i) => (

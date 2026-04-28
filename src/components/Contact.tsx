@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { personal } from "../data/resume";
-import { Mail, Github, Linkedin, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
+import { GithubIcon, LinkedinIcon } from "./Icons";
 
 const socials = [
-  { icon: Mail, label: "Email", value: personal.email, href: `mailto:${personal.email}` },
-  { icon: Github, label: "GitHub", value: "github.com/nannanwang", href: personal.github },
-  { icon: Linkedin, label: "LinkedIn", value: "linkedin.com/in/nannanwang", href: personal.linkedin },
-  { icon: MapPin, label: "Location", value: personal.location, href: null },
+  { icon: Mail, label: "Email", value: personal.email, href: `mailto:${personal.email}`, isLucide: true },
+  { icon: GithubIcon, label: "GitHub", value: "github.com/nannanwang", href: personal.github, isLucide: false },
+  { icon: LinkedinIcon, label: "LinkedIn", value: "linkedin.com/in/nannanwang", href: personal.linkedin, isLucide: false },
+  { icon: MapPin, label: "Location", value: personal.location, href: null, isLucide: true },
 ];
 
 export default function Contact() {
@@ -30,9 +31,8 @@ export default function Contact() {
         <div className="grid sm:grid-cols-2 gap-4 mb-10">
           {socials.map((s, i) => {
             const Icon = s.icon;
-            const inner = (
+            const card = (
               <motion.div
-                key={s.label}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -52,10 +52,10 @@ export default function Contact() {
 
             return s.href ? (
               <a key={s.label} href={s.href} target={s.href.startsWith("mailto") ? undefined : "_blank"} rel="noopener noreferrer">
-                {inner}
+                {card}
               </a>
             ) : (
-              <div key={s.label}>{inner}</div>
+              <div key={s.label}>{card}</div>
             );
           })}
         </div>

@@ -76,6 +76,20 @@ export const experiences = [
 
 export const projects = [
   {
+    title: "Clubhouse UCLA",
+    subtitle: "Club Discovery & Review Platform",
+    period: "Mar 2025 – Jun 2025",
+    description:
+      "Discovery and review platform for 1,300+ UCLA clubs with authenticated, email-verified reviews, helping students assess workload, culture, and inclusivity before joining.",
+    bullets: [
+      "Integrated UCLA's official club data API and built a trusted review pipeline with Google sign-in and email verification.",
+      "Built query-state-driven discovery with category/keyword filtering, MongoDB endpoints, and client-side caching, cutting redundant requests by 40%.",
+      "Ran iterative usability testing with 100+ students, boosting search-to-detail click-through by 15%.",
+    ],
+    tags: ["React", "MongoDB", "Node.js", "Google OAuth"],
+    link: "https://www.clubhouseucla.com/",
+  },
+  {
     title: "FreshFork",
     subtitle: "AI Meal Planning Application",
     period: "Sep 2024 – Dec 2024",

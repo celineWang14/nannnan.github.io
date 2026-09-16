@@ -6,7 +6,7 @@ export const personal = {
   github: "https://github.com/",
   linkedin: "https://linkedin.com/in/",
   summary:
-    "Full-Stack Software Engineer building production React/TypeScript/Next.js apps with Python/FastAPI/Node.js, including SSE streaming interfaces and citation-grounded RAG Q&A.",
+    "Software Engineer who builds high-performance, data-intensive systems end-to-end in small teams with short production cycles, from a data platform supporting $400M+ in annual capital planning to NLP retrieval services with measured, statistically evaluated quality gains.",
 };
 
 export const education = {
@@ -17,6 +17,21 @@ export const education = {
 };
 
 export const experiences = [
+  {
+    title: "Forward Deployed Software Engineer",
+    company: "Healthpeak Properties",
+    location: "Irvine, CA",
+    period: "Jun 2026 – Sep 2026",
+    bullets: [
+      "Built and shipped end-to-end a capital planning data platform used by 500+ users at a publicly traded REIT as the sole engineer in a 6-person embedded team, analyzing spend schedules across 2,000+ items and $400M+ in annual capital.",
+      "Designed the system architecture and role-specific workflows with React, TypeScript, and Palantir Foundry OSDK, supporting bulk import, multi-stage approvals, and spend analytics that replaced a fragmented Yardi, Excel, and email process.",
+      "Moved from stakeholder interviews to a working demo in 3 days and to production in 2 weeks through daily iteration with capital asset managers; the platform was adopted for future AOP planning cycles.",
+      "Kept the production system resilient by triaging incidents, resolving race conditions and asynchronous state-synchronization defects, and instrumenting PostHog analytics to drive data-informed iteration.",
+      "Built a second anomaly-detection platform over 10,000+ historical invoices across 704+ properties, modeling commodity-level usage and multi-year consumption trends; delivered a working demo in 1 week.",
+      "Engineered an automated flagging engine that detects billing gaps, abnormal billing periods, cost and spend deviations, and threshold violations with explainable alerts and resolution tracking, shifting manual invoice review to exception-based workflows.",
+    ],
+    tags: ["React", "TypeScript", "Palantir Foundry", "OSDK", "PostHog"],
+  },
   {
     title: "Software Engineer Intern (Full-Stack)",
     company: "VortexNet",
@@ -82,7 +97,7 @@ export const skillGroups = [
   },
   {
     label: "Frameworks & Libraries",
-    skills: ["React", "Next.js", "Redux", "Vue.js", "Node.js", "Express", "FastAPI", "Flask", "TailwindCSS"],
+    skills: ["React", "Next.js", "Redux", "Vue.js", "Node.js", "Express", "FastAPI", "Flask", "Palantir Foundry", "TailwindCSS"],
   },
   {
     label: "APIs, Data & Storage",

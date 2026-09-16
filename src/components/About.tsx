@@ -4,7 +4,7 @@ import { MapPin, GraduationCap, Star } from "lucide-react";
 
 const stats = [
   { label: "GPA", value: education.gpa },
-  { label: "Internships", value: "3" },
+  { label: "Internships", value: "4" },
   { label: "Projects", value: "4+" },
   { label: "Grad Year", value: "'27" },
 ];
